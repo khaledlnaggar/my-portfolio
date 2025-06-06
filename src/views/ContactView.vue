@@ -1,5 +1,7 @@
 <template>
-  <div class="flex flex-col items-center justify-center min-h-[100vh] gap-12 max-w-7xl m-auto px-4">
+  <div
+    class="flex lg:mt-[1%] md:mt-[15%] mt-[27%] flex-col items-center justify-center min-h-[90vh] gap-12 max-w-7xl m-auto px-4"
+  >
     <h1 class="section-title">My Social Account</h1>
     <div class="flex flex-wrap items-center justify-center gap-6">
       <a
@@ -15,15 +17,14 @@
   </div>
 </template>
 
-<script setup>
-import { ref } from 'vue'
+<script setup lang="ts">
 import CardDesign from '@/components/shared/CardDesign.vue'
 
-const socials = ref([
+const socials = [
   { name: 'Github', url: 'https://github.com/khaledlnaggar' },
   { name: 'LinkedIn', url: 'https://www.linkedin.com/in/khaled-elnaggar-10189321b/' },
   { name: 'Instagram', url: 'https://www.instagram.com/khaledlnaggar/' },
   { name: 'Facebook', url: 'https://www.facebook.com/khaled.moataz.33/' },
   { name: 'Gmail', url: 'khaledlnaggar@gmail.com' },
-])
+]
 </script>

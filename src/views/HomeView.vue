@@ -5,17 +5,19 @@
     >
       <div class="relative z-[2]">
         <h1
-          class="font-orbitron text-[5rem] font-extrabold tracking-[5px] text-[var(--primary-color)] mb-4 animate-titleGlow"
+          class="font-orbitron text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-[5px] text-[var(--primary-color)] mb-4 animate-titleGlow"
         >
           KHALED ELNAGGAR
         </h1>
 
-        <p class="text-2xl font-light text-[var(--text-secondary)] mb-8 animate-fadeInUpDelay1">
+        <p
+          class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light text-[var(--text-secondary)] mb-8 animate-fadeInUpDelay1"
+        >
           Frontend Developer
         </p>
 
         <p
-          class="text-[1.3rem] text-[var(--text-muted)] max-w-[700px] mx-auto mb-12 animate-fadeInUpDelay2"
+          class="text-base sm:text-lg md:text-xl lg:text-[1.3rem] text-[var(--text-muted)] max-w-[700px] mx-auto mb-12 animate-fadeInUpDelay2"
         >
           Angular specialist transitioning to Vue.js. Building modern, scalable web applications
           with clean code and innovative solutions. Crafting the future of digital experiences.
@@ -24,6 +26,7 @@
         <router-link to="/projects" class="main-btn">View Projects</router-link>
       </div>
     </section>
+
     <section class="section expertise pb-12">
       <h2 class="section-title">Expertise</h2>
 
@@ -33,33 +36,41 @@
           :key="index"
           class="relative overflow-hidden p-12 text-center rounded-[15px] border border-[var(--border-color)] bg-[rgba(255,255,255,0.03)] transition-all duration-500 ease-in-out hover:translate-y-[-10px] hover:shadow-[0_20px_40px_rgba(255,255,255,0.1)] hover:border-[var(--text-secondary)] w-full sm:w-1/2 md:w-1/3 lg:w-1/4 skill-card"
         >
-          <h3 class="text-[1.8rem] mb-6 font-semibold text-[var(--primary-color)]">
+          <h3
+            class="text-xl sm:text-2xl md:text-[1.6rem] lg:text-[1.8rem] mb-6 font-semibold text-[var(--primary-color)]"
+          >
             {{ skill.title }}
           </h3>
-          <p class="text-[1.1rem] text-[var(--text-secondary)] leading-[1.8]">
+          <p
+            class="text-sm sm:text-base md:text-lg lg:text-[1.1rem] text-[var(--text-secondary)] leading-[1.8]"
+          >
             {{ skill.description }}
           </p>
         </div>
       </div>
     </section>
+
     <section
       class="section about-section bg-[rgba(255,255,255,0.02)] border-y border-[var(--border-color)]"
     >
       <div>
         <div class="about-content max-w-[800px] mx-auto text-center">
           <h2
-            class="font-orbitron text-[3.5rem] mb-12 text-[var(--primary-color)]"
+            class="font-orbitron text-2xl sm:text-4xl md:text-5xl lg:text-[3.5rem] mb-12 text-[var(--primary-color)]"
             style="text-shadow: var(--glow-white)"
           >
             ABOUT ME
           </h2>
 
-          <p class="text-[1.3rem] leading-[2] text-[var(--text-secondary)] mb-12">
+          <p
+            class="text-base sm:text-lg md:text-xl lg:text-[1.3rem] leading-[2] text-[var(--text-secondary)] mb-12"
+          >
             I'm a passionate frontend developer with a keen eye for detail and a love for creating
             seamless user experiences. My journey in web development has been driven by curiosity
             and the desire to push the boundaries of what's possible in the browser. I specialize in
             transforming complex ideas into elegant, functional interfaces.
           </p>
+
           <div class="stats-grid flex justify-center flex-wrap gap-12">
             <div class="stat-item text-center">
               <CardDesign title="2+" description="Years Experience" />
@@ -74,10 +85,9 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import CardDesign from '@/components/shared/CardDesign.vue'
-import { ref } from 'vue'
-const skills = ref([
+const skills = [
   {
     title: 'Frontend Frameworks',
     description:
@@ -93,7 +103,7 @@ const skills = ref([
     description:
       'Git version control, Webpack & Vite build tools, npm package management, VS Code optimization, Chrome DevTools proficiency, and Figma design collaboration.',
   },
-])
+]
 </script>
 
 <style scoped>
@@ -116,6 +126,15 @@ const skills = ref([
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
@@ -163,15 +182,6 @@ const skills = ref([
   z-index: 2;
 }
 
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 .section {
   min-height: 100vh;
   scroll-snap-align: start;
@@ -181,7 +191,5 @@ const skills = ref([
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  @apply min-h-screen relative snap-start snap-always pt-20 px-5 pb-5 flex flex-col justify-center;
 }
 </style>

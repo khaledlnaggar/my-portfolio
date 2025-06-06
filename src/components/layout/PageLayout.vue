@@ -6,7 +6,7 @@
     <RouterView />
   </main>
 </template>
-<script setup>
+<script setup lang="ts">
 import AppHeader from './appHeader.vue'
 import { RouterView } from 'vue-router'
 </script>

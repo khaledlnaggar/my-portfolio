@@ -10,29 +10,34 @@
   --border-color: #333333;
   --glow-white: 0 0 20px rgba(255, 255, 255, 0.3);
 }
-/* html,
-body {
-  scroll-snap-type: y mandatory;
-  height: 100%;
-} */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Rajdhani', sans-serif;
   background: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 a {
   text-decoration: none;
 }
+
 .section-title {
-  @apply text-center font-bold mb-16 uppercase;
-  @apply md:text-6xl text-4xl;
+  @apply text-center font-bold uppercase text-3xl mb-0 sm:text-4xl md:text-5xl lg:text-6xl md:mb-14 lg:mb-16;
   font-family: 'Orbitron', monospace;
   color: var(--primary-color);
   text-shadow: var(--glow-white);
 }
+
 .animated-bg {
   position: fixed;
   top: 0;
@@ -84,16 +89,13 @@ a {
     transform: translate(60px, 60px);
   }
 }
-.main-btn {
-  @apply inline-block px-10 py-[18px] text-[1.2rem] font-semibold rounded-full uppercase tracking-wide no-underline text-[var(--bg-primary)] bg-[var(--primary-color)] relative overflow-hidden;
 
-  /* Custom transition and animation */
+.main-btn {
+  @apply inline-block px-6 sm:px-8 md:px-10 py-4 text-base sm:text-lg md:text-xl font-semibold rounded-full uppercase tracking-wide no-underline text-[var(--bg-primary)] bg-[var(--primary-color)] relative overflow-hidden;
   transition: all 0.3s ease;
   animation: fadeInUp 1s ease-out 1.5s both;
 }
-.font-orbitron {
-  font-family: 'Orbitron', sans-serif;
-}
+
 .main-btn::before {
   content: '';
   position: absolute;
@@ -114,4 +116,30 @@ a {
 
 .main-btn:hover::before {
   left: 100%;
+}
+
+.font-orbitron {
+  font-family: 'Orbitron', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .main-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+  /* 
+  .section-title {
+    @apply font-orbitron text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[var(--primary-color)] text-center;
+  } */
+}
+
+@media (max-width: 480px) {
+  .main-btn {
+    width: 100%;
+    text-align: center;
+  }
+  /* 
+  .section-title {
+    font-size: 1.75rem;
+  } */
 }
