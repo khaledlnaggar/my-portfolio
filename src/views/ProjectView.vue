@@ -39,7 +39,7 @@
           >
             <img
               loading="lazy"
-              class="aspect-video w-full object-cover rounded-lg shadow-lg transition-transform hover:scale-[1.01] max-h-[562px]"
+              class="w-full object-cover object-center rounded-lg shadow-lg transition-transform hover:scale-[1.01] max-h-[562px]"
               :src="project.img"
               :alt="project.title"
             />
@@ -94,17 +94,17 @@ function initializeSwiper() {
 const projects = [
   {
     title: 'Qawafil Development',
-    img: new URL('@/assets/images/qawafil.gif', import.meta.url).href,
+    img: new URL('@/assets/images/qawafil-logo (1).png', import.meta.url).href,
     link: 'https://www.qawafil-eg.com/en',
   },
   {
     title: 'Az Studios',
-    img: new URL('@/assets/images/Az Studios .gif', import.meta.url).href,
+    img: new URL('@/assets/images/qawafil-logo (2).png', import.meta.url).href,
     link: 'https://www.az-studios.com',
   },
   {
     title: 'Swvl',
-    img: new URL('@/assets/images/swvl.gif', import.meta.url).href,
+    img: new URL('@/assets/images/qawafil-logo (3).png', import.meta.url).href,
     link: 'https://www.swvl.com/',
   },
 ]
@@ -119,9 +119,9 @@ swiper-container {
 }
 
 .last-slide img {
-  margin: 2rem 0;
   max-height: 562px;
+  aspect-ratio: 315/256;
   object-fit: cover;
-  object-position: top;
+  object-position: center;
 }
 </style>
